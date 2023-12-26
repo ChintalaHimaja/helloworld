@@ -1,1 +1,21 @@
-simple workflow
+name: Simple Build Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run build script
+      run: |
+        # Add your build commands here
+        echo "Running build script"
+        # Example: npm install && npm run build
